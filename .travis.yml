@@ -7,7 +7,7 @@ addons:
       - wine
 
 language: node_js
-node_us:
+node_js:
   - '9'
 cache:
   directories:
