@@ -21,5 +21,16 @@
   },
   "dependencies": {
     "electron-builder": "^20.2.0"
+  },
+  "build": {
+    "appId": "quickstart.example.com",
+    "mac": {
+      "category": "Network"
+    },
+    "linux": {
+      "category": "Network"
+    },
+    "win": {},
+    "productName": "ElecQuickStart"
   }
 }
