@@ -14,8 +14,10 @@ cache:
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
 
-before_deploy:
+script:
   - echo $PWD
+
+before_deploy:
   - docker run --rm   --env ELECTRON_CACHE="/root/.cache/electron" --env ELECTRON_BUILDER_CACHE="/root/.cache/electron-builder"   -v ${PWD}:/project   -v ${PWD##*/}-node-modules:/project/node_modules   -v ~/.cache/electron:/root/.cache/electron   -v ~/.cache/electron-builder:/root/.cache/electron-builder   electronuserland/builder:wine /bin/bash -c "npm i; ./node_modules/.bin/electron-builder --linux tar.gz --win zip --mac zip"
 
 deploy:
